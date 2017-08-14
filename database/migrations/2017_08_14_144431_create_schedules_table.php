@@ -15,8 +15,8 @@ class CreateSchedulesTable extends Migration
     {
         Schema::create('schedules', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
             $table->unsignedInteger('place_id');
+            $table->string('name');
 
             $table->foreign('place_id')->references('id')->on('places');
         });
